@@ -46,6 +46,9 @@ $hotels = [
     ],
 
 ];
+
+
+
 ?>
 
 <html lang="en">
@@ -58,15 +61,19 @@ $hotels = [
 </head>
 
 <body>
-    <h1 class="text-center text-uppercase container pt-3">hotel più belli d'italia</h1>
+    <h1 class="text-center text-uppercase container pt-3 pb-2">hotel più belli d'italia</h1>
 
-    <form class="container" action="./index.php" method="get">
+    <form class="container pb-3" action="./index.php" method="get">
 
-        <label for="parking">inserisci hotel da cercare con un parcheggio</label>
-        <input type="text" name="parking" id="parking">
+        <div class="mb-3 ">
+            <label for="parking" class="form-label"> inserisci Hotel</label>
+            <input class="form-control" type="text" name="parking" id="parking">
+        </div>
 
-        <label for="vote">inserisci hotel da cercare con un voto che va da 1 a 5</label>
-        <input type="number" name="vote" id="vote">
+        <div class="mb-3 ">
+            <label for="vote" class="form-label">Inserisci Voto</label>
+            <input class="form-control"  type="number" name="vote" id="vote">
+        </div>
 
         <button class="btn btn-primary ms-2" type="submit">Invia</button>
 
@@ -75,7 +82,7 @@ $hotels = [
 
 
 
-                                                            <!-- ESERCIZIO USANDO LE CARD DI BOOTSTRAP -->
+    <!-- ESERCIZIO USANDO LE CARD DI BOOTSTRAP -->
 
     <!--<div class="container pt-4 ">
         <div class="row ">-->
@@ -113,7 +120,7 @@ $hotels = [
 
 
 
-                                                          <!-- ESERCIZIO USANDO LE TABLE DI BOOTSTRAP -->
+    <!-- ESERCIZIO USANDO LE TABLE DI BOOTSTRAP -->
 
     <table class="table container">
 
@@ -131,7 +138,8 @@ $hotels = [
                 <tr>
                     <th scope="row"><?php echo $hotel['name']; ?></th>
                     <td><?php echo $hotel['description']; ?></td>
-                    <td><?php
+                    <td>
+                        <?php
                         $park = 'Parking';
                         $nopark = 'Noparking';
                         if ($hotel['parking'] === true) {
@@ -140,7 +148,8 @@ $hotels = [
                             echo $nopark;
                         }
 
-                        ?></td>
+                        ?>
+                    </td>
                     <td><?php echo $hotel['vote']; ?></td>
                     <td><?php echo $hotel['distance_to_center']; ?> km </td>
                 </tr>
