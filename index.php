@@ -60,37 +60,34 @@ $hotels = [
 <body>
     <h1 class="text-center text-uppercase container pt-3">hotel più belli d'italia</h1>
 
-     <form class="container" action="./index.php" method="get">
-          
-     <label for="parking">inserisci hotel da cercare con un parcheggio</label>
-     <input type="text" name="parking" id="parking">
+    <form class="container" action="./index.php" method="get">
 
-     <label for="vote">inserisci hotel da cercare con un voto</label>
-     <input type="text" name="vote" id="vote">
+        <label for="parking">inserisci hotel da cercare con un parcheggio</label>
+        <input type="text" name="parking" id="parking">
 
-     <button class="btn btn-primary ms-2" type="submit">Invia</button>
+        <label for="vote">inserisci hotel da cercare con un voto che va da 1 a 5</label>
+        <input type="number" name="vote" id="vote">
 
-     </form>
+        <button class="btn btn-primary ms-2" type="submit">Invia</button>
 
-
+    </form>
 
 
 
 
+                                                            <!-- ESERCIZIO USANDO LE CARD DI BOOTSTRAP -->
 
+    <!--<div class="container pt-4 ">
+        <div class="row ">-->
 
-
-
-    <div class="container pt-4 ">
-        <div class="row ">
-
-            <?php foreach ($hotels as $hotel) { ?>
-                <div class="col-lg-6 mb-3">
+    <? #php foreach ($hotels as $hotel) { 
+    ?>
+    <!-- <div class="col-lg-6 mb-3">
                     <div class="card mx-lg-2">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $hotel['name']; ?></h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $hotel['description']; ?></h6>
-                            <p> <?php
+                            <h5 class="card-title"><#?php echo $hotel['name']; ?></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"><#?php echo $hotel['description']; ?></h6>
+                            <p> <#?php
                                 $park = 'Parking';
                                 $nopark = 'Noparking';
                                 if ($hotel['parking'] === true) {
@@ -100,18 +97,61 @@ $hotels = [
                                 }
 
                                 ?></p>
-                            <h5> Voto dell'hotel: <?php echo $hotel['vote']; ?></h5>
-                            <h5> Distanza dal centro <?php echo $hotel['distance_to_center']; ?> km </h5>
+                            <h5> Voto dell'hotel: <#?php echo $hotel['vote']; ?></h5>
+                            <h5> Distanza dal centro <#?php echo $hotel['distance_to_center']; ?> km </h5>
 
 
 
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                </div>-->
+    <? #php } 
+    ?>
 
-        </div>
-    </div>
+    <!--</div>
+    </div>-->
+
+
+
+                                                          <!-- ESERCIZIO USANDO LE TABLE DI BOOTSTRAP -->
+
+    <table class="table container">
+
+        <thead>
+            <tr>
+                <th scope="col">nome hotel</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">vote</th>
+                <th scope="col">distance_to_center</th>
+            </tr>
+        </thead>
+        <?php foreach ($hotels as $hotel) { ?>
+            <tbody>
+                <tr>
+                    <th scope="row"><?php echo $hotel['name']; ?></th>
+                    <td><?php echo $hotel['description']; ?></td>
+                    <td><?php
+                        $park = 'Parking';
+                        $nopark = 'Noparking';
+                        if ($hotel['parking'] === true) {
+                            echo $park;
+                        } else {
+                            echo $nopark;
+                        }
+
+                        ?></td>
+                    <td><?php echo $hotel['vote']; ?></td>
+                    <td><?php echo $hotel['distance_to_center']; ?> km </td>
+                </tr>
+
+            </tbody>
+        <?php } ?>
+    </table>
+
+
+
+
 </body>
 
 </html>
