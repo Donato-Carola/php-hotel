@@ -60,7 +60,28 @@ $hotels = [
 <body>
     <h1 class="text-center text-uppercase container pt-3">hotel più belli d'italia</h1>
 
-    <div class="container ">
+     <form class="container" action="./index.php" method="get">
+          
+     <label for="parking">inserisci hotel da cercare con un parcheggio</label>
+     <input type="text" name="parking" id="parking">
+
+     <label for="vote">inserisci hotel da cercare con un voto</label>
+     <input type="text" name="vote" id="vote">
+
+     <button class="btn btn-primary ms-2" type="submit">Invia</button>
+
+     </form>
+
+
+
+
+
+
+
+
+
+
+    <div class="container pt-4 ">
         <div class="row ">
 
             <?php foreach ($hotels as $hotel) { ?>
