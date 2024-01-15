@@ -81,45 +81,6 @@ $hotels = [
 
 
 
-
-    <!-- ESERCIZIO USANDO LE CARD DI BOOTSTRAP -->
-
-    <!--<div class="container pt-4 ">
-        <div class="row ">-->
-
-    <? #php foreach ($hotels as $hotel) { 
-    ?>
-    <!-- <div class="col-lg-6 mb-3">
-                    <div class="card mx-lg-2">
-                        <div class="card-body">
-                            <h5 class="card-title"><#?php echo $hotel['name']; ?></h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"><#?php echo $hotel['description']; ?></h6>
-                            <p> <#?php
-                                $park = 'Parking';
-                                $nopark = 'Noparking';
-                                if ($hotel['parking'] === true) {
-                                    echo $park;
-                                } else {
-                                    echo $nopark;
-                                }
-
-                                ?></p>
-                            <h5> Voto dell'hotel: <#?php echo $hotel['vote']; ?></h5>
-                            <h5> Distanza dal centro <#?php echo $hotel['distance_to_center']; ?> km </h5>
-
-
-
-                        </div>
-                    </div>
-                </div>-->
-    <? #php } 
-    ?>
-
-    <!--</div>
-    </div>-->
-
-
-
     <!-- ESERCIZIO USANDO LE TABLE DI BOOTSTRAP -->
 
     <table class="table container">
@@ -174,3 +135,42 @@ $hotels = [
         <#?php } ?#>
 
     </ul>-->
+
+
+
+    
+    <!-- ESERCIZIO USANDO LE CARD DI BOOTSTRAP -->
+
+    <!--<div class="container pt-4 ">
+        <div class="row ">-->
+
+        <? #php foreach ($hotels as $hotel) { 
+    ?>
+    <!-- <div class="col-lg-6 mb-3">
+                    <div class="card mx-lg-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><#?php echo $hotel['name']; ?></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"><#?php echo $hotel['description']; ?></h6>
+                            <p> <#?php
+                                $park = 'Parking';
+                                $nopark = 'Noparking';
+                                if ($hotel['parking'] === true) {
+                                    echo $park;
+                                } else {
+                                    echo $nopark;
+                                }
+
+                                ?></p>
+                            <h5> Voto dell'hotel: <#?php echo $hotel['vote']; ?></h5>
+                            <h5> Distanza dal centro <#?php echo $hotel['distance_to_center']; ?> km </h5>
+
+
+
+                        </div>
+                    </div>
+                </div>-->
+    <? #php } 
+    ?>
+
+    <!--</div>
+    </div>-->
