@@ -58,16 +58,41 @@ $hotels = [
 </head>
 
 <body>
+<div class="container pt-5">
+<?php foreach ($hotels as $hotel) { ?>
+<div class="card mt-2" >
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $hotel['name']; ?></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $hotel['description']; ?></h6>
+    <p> <?php
+      $park='parking';
+      $nopark='noparking';
+    if( $hotel['parking'] === true ) {
+        echo $park;
+    }else{
+        echo $nopark;
+    }
+        
+    ?></p>
+     
+     
 
-    <ul class="p-0">
 
-        <?php foreach ($hotels as $hotel) { ?>
-            <li>
-                <?php echo $hotel['name']  ; ?>
-            </li>
-        <?php } ?>
+  </div>
+</div>
 
-    </ul>
+<?php } ?>
+</div>   
 </body>
 
-</html>
+</html> 
+
+<!--<ul class="p-0">
+
+     <#?php foreach ($hotels as $hotel) { ?#>
+            <li>
+                <#?php echo $hotel['name']  ; ?>
+            </li>
+        <#?php } ?#>
+
+    </ul>-->
