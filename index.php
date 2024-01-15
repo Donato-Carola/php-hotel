@@ -58,34 +58,42 @@ $hotels = [
 </head>
 
 <body>
-<div class="container pt-5">
-<?php foreach ($hotels as $hotel) { ?>
-<div class="card mt-2" >
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $hotel['name']; ?></h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $hotel['description']; ?></h6>
-    <p> <?php
-      $park='parking';
-      $nopark='noparking';
-    if( $hotel['parking'] === true ) {
-        echo $park;
-    }else{
-        echo $nopark;
-    }
-        
-    ?></p>
-     
-     
+    <h1 class="text-center text-uppercase container pt-3">hotel più belli d'italia</h1>
+
+    <div class="container ">
+        <div class="row ">
+
+            <?php foreach ($hotels as $hotel) { ?>
+                <div class="col-lg-6 mb-3">
+                    <div class="card mx-lg-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $hotel['name']; ?></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $hotel['description']; ?></h6>
+                            <p> <?php
+                                $park = 'Parking';
+                                $nopark = 'Noparking';
+                                if ($hotel['parking'] === true) {
+                                    echo $park;
+                                } else {
+                                    echo $nopark;
+                                }
+
+                                ?></p>
+                            <h5> Voto dell'hotel: <?php echo $hotel['vote']; ?></h5>
+                            <h5> Distanza dal centro <?php echo $hotel['distance_to_center']; ?> km </h5>
 
 
-  </div>
-</div>
 
-<?php } ?>
-</div>   
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div>
+    </div>
 </body>
 
-</html> 
+</html>
 
 <!--<ul class="p-0">
 
